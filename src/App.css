@@ -1,0 +1,39 @@
+:root{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  --background-color:#66BB6A
+}
+
+.container{
+  width: 100%;
+  text-align: center;
+}
+.table-container{
+  width: 100%;
+
+}
+
+thead{
+  background-color: var(--background-color);
+  padding: 10px 0px;
+}
+
+
+.table-data{
+  padding: 10px 0px;
+  border-bottom: 1px solid red;
+
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.btn{
+  padding: 5px 10px;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  cursor: pointer;
+}
