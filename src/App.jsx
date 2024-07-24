@@ -15,7 +15,7 @@ function App() {
       console.log(data.data)
       setFetchedData(data.data)
     } catch (error) {
-      console.log("Error: " , error)
+      alert("Error: " , error)
     }
   };
 
