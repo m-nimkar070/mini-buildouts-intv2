@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Pagination from "./components/Pagination/Pagination";
+import axios from "axios";
 
 const URL =
   "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json";
@@ -9,10 +10,13 @@ function App() {
   const [fetchedData, setFetchedData] = useState([]);
 
   const ApiCall = async () => {
-    await fetch(URL)
-      .then((res) => res.json())
-      .then((data) => setFetchedData(data))
-      .catch((err) => console.log(err.message));
+    try {
+      const data = await axios.get(URL)
+      console.log(data.data)
+      setFetchedData(data.data)
+    } catch (error) {
+      console.log("Error: " , error)
+    }
   };
 
   useEffect(() => {
@@ -20,7 +24,9 @@ function App() {
   }, []);
   return (
     <>
-      <Pagination data={fetchedData} />
+    {fetchedData.length > 0 &&
+     <Pagination data={fetchedData} /> 
+    }
     </>
   );
 }

@@ -31,8 +31,8 @@ const Pagination = ({ data }) => {
     <>
       <div className="pagination-container">
         <div>
-        <Tableview fetchedData={slicedData} />
-
+          {slicedData.length > 0 ? <Tableview fetchedData={slicedData} /> : <h1>Loading...</h1>
+          }
         </div>
 
         <div className="button">
