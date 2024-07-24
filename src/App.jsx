@@ -15,7 +15,7 @@ function App() {
       console.log(data.data)
       setFetchedData(data.data)
     } catch (error) {
-      alert("Error: " , error)
+      alert("failed to fetch data: " , error)
     }
   };
 
